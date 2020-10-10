@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <style>
+        #map{
+            height: 300px;
+            width: 500px;
+            border: 5px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Map Test</h1>
+
+    <div class="row">
+        <div class="input-field col s6">
+          <input placeholder="Enter Exact Address, City & State, or Zipcode" id="searchInput" type="text" class="validate">
+          <label class="active" for="location search">Search Location</label>
+          <a class="waves-effect waves-light btn" id="searchBtn">Search</a>
+        </div>
+      </div>
+
+    <div id="map"></div>
+
+
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="key.js"></script>
+    <script src="script.js"></script>
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApq4gHyOVxQckOMJr-b3lCg11jKPL6sHE&callback=initializeMap"></script>
+</body>
+</html>
