@@ -83,7 +83,7 @@ var county = "Beaufort";
         var settings = {
             "async": true,
             "crossDomain": true,
-            "url": "https://coronavirus-map.p.rapidapi.com/v1/spots/week?region=south%20carolina",
+            "url": "https://coronavirus-map.p.rapidapi.com/v1/spots/week?region=north%20carolina",
             "method": "GET",
             "headers": {
                 "x-rapidapi-host": "coronavirus-map.p.rapidapi.com",
@@ -93,4 +93,31 @@ var county = "Beaufort";
         
         $.ajax(settings).done(function (response) {
             console.log(response, "coronavirus-map week by state or country");
+        });
+
+        // var settings2 = {
+        //     "async": true,
+        //     "crossDomain": true,
+        //     "url": "https://coronavirus-map.p.rapidapi.com/v1/spots/summary",
+        //     "method": "GET",
+        //     "headers": {
+        //         "x-rapidapi-host": "coronavirus-map.p.rapidapi.com",
+        //         "x-rapidapi-key": "46f46b0243msh7a994a14c64f248p1d7d65jsn11182e395fb3"
+        //     }
+        // }
+        
+        // $.ajax(settings).done(function (response) {
+        //     console.log(response);
+        // });
+
+        var state1 = "nc";
+        var urlByState = "https://api.covidtracking.com/v1/states/" + state1 + "/info.json"
+        $.ajax({
+            url: urlByState,
+            method: "GET"
+          })
+          .then(function(response) {
+            console.log(queryURL);
+  
+            console.log(response, "by state live covid data");
         });
