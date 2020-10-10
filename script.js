@@ -3,8 +3,8 @@
 console.log(Date.now(), "hello, your javascript is working")
 
 // newsAPI does not work unless server or in browser
-// console.log("sample URL structure of News API with Covid articles from last 30 days", "http://newsapi.org/v2/everything?q=covid&from=2020-09-09&sortBy=publishedAt&apiKey=c453b5b715154b56a4081dd94b610d67")
 
+// bing news search from rapidapi see < https://rapidapi.com/microsoft-azure-org-microsoft-cognitive-services/api/bing-news-search1?endpoint=apiendpoint_2bef1167-41a0-4a2c-9b49-4be435bf94c5 >
 var bingNewsResults = {
 	"async": true,
 	"crossDomain": true,
@@ -37,7 +37,7 @@ $.ajax(bingNewsResults).done(function (response1) {
 
 // });
 
-
+// covid search but no maps, see < https://corona.lmao.ninja/docs/#/COVID-19%3A%20JHUCSSE/get_v3_covid_19_jhucsse_counties__county_ >
 var county = "Beaufort";
 
       // Constructing a queryURL using the animal name
@@ -79,6 +79,7 @@ var county = "Beaufort";
         //   }
         });
 
+        // covid data from < https://rapidapi.com/Yatko/api/coronavirus-map?endpoint=apiendpoint_6c397b43-e924-4a95-85ee-9a2af405099c >
         var settings = {
             "async": true,
             "crossDomain": true,
