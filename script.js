@@ -1,8 +1,11 @@
-//Variables for map
+
+
 var newScript = $("<script>")
 newScript.attr({ "src": "https://maps.googleapis.com/maps/api/js?key=" + key + "&callback=initializeMap" });
 $('body').append(newScript)
 
+
+//Variables for map
 var map;
 var searchInput;
 var url;
@@ -19,6 +22,10 @@ var searchResults = [];
 //negative lat = South
 //positive lng = east
 //negative lng = west
+
+$(document).ready(function () {
+    $('.sidenav').sidenav();
+});
 
 var mapCenter = {
     lat: 44.4280,

@@ -7,36 +7,88 @@
     <title>Document</title>
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <style>
-        #map {
-            height: 500px;
-            width: 700px;
-            border: 5px solid black;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h1>Map Test</h1>
 
-    <div class="row">
-        <div class="input-field col s6">
-            <input placeholder="Enter Exact Address, City & State, or Zipcode" id="searchInput" type="text"
-                class="validate">
-            <label class="active" for="location search">Search Location</label>
-            <a class="waves-effect waves-light btn" id="searchBtn">Search</a>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo center hide-on-med-and-down">Exploring Parks During Covid</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="left hide-on-med-and-down">
+                <li><a href="#">Headlines</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
         </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-demo">
+        <li><a href="#">Headlines</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+
+    <div class="container">
+        <div class="row">
+            <br />
+            <div class="col s4">
+                <div class="input-field">
+                    <input placeholder="Enter Exact Address, City & State, or Zipcode" id="searchInput" type="text"
+                        class="validate">
+
+                    <a class="waves-effect waves-light btn" id="searchBtn">Search</a>
+                </div>
+
+                <ul>
+                    <li>
+                        Great Smoky Mountains National Park
+                    </li>
+                    <br />
+                    <li>
+                        Carl Sandburg Home National Historic Site
+                    </li>
+                    <br />
+                    <li>
+                        Blue Ridge National Heritage Area
+                    </li>
+                    <br />
+                </ul>
+            </div>
+
+
+
+            <div class="col s8 card-panel green">
+                <div class="col s6">
+                    <h4 class="covidheader white-text"><b>COVID-19 Data:</b></h4>
+                </div>
+                <div class="col s6 specs">
+                    <ul>
+                        <li class="white-text">Percentage change over past 7 days: <span
+                                id="percentageChange">5%+</span>
+                        </li>
+                        <li class="white-text">Hospitalization: <span id="hospitalization">2%+</span></li>
+                        <li class="white-text">Deaths: <span id="deaths">1%+</span></li>
+                    </ul>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="col s8">
+                <div id="map"></div>
+            </div>
+
+        </div>
+
     </div>
-
-    <div id="map"></div>
-
-
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="key.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="script.js"></script>
-
 </body>
 
 </html>
