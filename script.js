@@ -1,6 +1,6 @@
 $('body').append('<script defer src="https://maps.googleapis.com/maps/api/js?key=' + key + '&callback=initializeMap"></script>');
 
-console.log(window);
+console.log(this);
 var map;
 var searchInput;
 var url;
@@ -89,7 +89,7 @@ $('#searchBtn').on('click', function(event){
             
         }
         
-        
+        runCovid(stateCode);
 
         npsURL = "https://developer.nps.gov/api/v1/parks?statecode=" + stateCode + "&api_key=" + npsAPIkey;
 

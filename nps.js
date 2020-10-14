@@ -44,20 +44,28 @@ function npsResults(queryURL) {
             console.log("Dropdown selection results", results);
 
             for (var i = 0; i < results.data.length; i++){
-                var lat1 = parseFloat(results.data[i].latitude);
-                var lng1 = parseFloat(results.data[i].longitude);
+                
+                    var lat1 = parseFloat(results.data[i].latitude);
+                    var lng1 = parseFloat(results.data[i].longitude);
+        
+                    var lat2 = parseFloat(mapCenter.lat);
+                    var lng2 = parseFloat(mapCenter.lng);
+        
+                    distance = calculateDistance(lat1, lng1, lat2, lng2);
     
-                var lat2 = parseFloat(mapCenter.lat);
-                var lng2 = parseFloat(mapCenter.lng);
-    
-                distance = calculateDistance(lat1, lng1, lat2, lng2);
+                    searchResults[i] = {
+                        name: results.data[i].fullName,
+                        latLng: results.data[i].latLong,
+                        lat: parseFloat(results.data[i].latitude),
+                        lng: parseFloat(results.data[i].longitude),
+                        distance: distance
+                    }//end searchResults[i]
 
-                searchResults[i] = {
-                    name: results.data[i].fullName,
-                    latLng: results.data[i].latLong,
-                    lat: parseFloat(results.data[i].latitude),
-                    lng: parseFloat(results.data[i].longitude),
-                    distance: distance
+            }//end for
+
+            for (var i = 0; i < searchResults.length; i++){
+                if (searchResults[i].distance === 'NaN'){
+                    searchResults.splice(i, 1);
                 }
             }
 
