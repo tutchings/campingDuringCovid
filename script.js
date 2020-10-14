@@ -443,6 +443,20 @@ function runCovid (shortName) {
         $("#percentageChange").append(percentageChange);
         console.log(precentDeathSev.toFixed(2), "percent of deaths increase 7 days")
 
+        if (percentageChangeSev <= 1.9 && hospitalizations <= 1.9 && precentDeathSev <= 1.9) {
+            console.log("Hello, this is working yellow")
+            var yellow = $("#card").attr({"background-color": "rgb(255, 204, 0)!important"})
+            $("#card").append(yellow);
+
+        } else if (percentageChangeSev <= 4.9 && hospitalizations <= 4.9 && precentDeathSev <= 4.9) {
+            console.log("step 2 is working orange")
+            var orange = $("#card").attr({"background-color": "rgb(255, 102, 0)!important"})
+            $("#card").append(orange);
+        } else {
+            console.log("it's looking bad 5+")
+            var red = $("#card").attr({"background-color": "rgb(204, 0, 0)!important"})
+            $("#card").append(red);
+        }
         
     });
 
