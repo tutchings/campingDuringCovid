@@ -433,15 +433,16 @@ function runCovid (shortName) {
         console.log("death's over seven days", deathSevenDay, "positive cases over seven days", positiveSevenDay)
         var totalDeaths = response[6].death
         var precentDeathSev = (deathSevenDay / totalDeaths) * 100;
-        var deaths = $("#deaths").text(precentDeathSev.toFixed(2) + " %+");
+        var deaths = $("#deaths").text("   " + precentDeathSev.toFixed(2) + " %");
         $("#deaths").append(deaths);
         var hospitalizations = ((response[0].hospitalizedCurrently - response[6].hospitalizedCurrently) / response[6].hospitalizedCurrently) * 100;
-        var hospitalizationsCg = $("#hospitalizations").text(hospitalizations.toFixed(2) + " %+");
+        var hospitalizationsCg = $("#hospitalizations").text("   " + hospitalizations.toFixed(2) + " %");
         $("#hospitalizations").append(hospitalizationsCg);
         var percentageChangeSev = ( positiveSevenDay / response[6].positive) * 100;
-        var percentageChange = $("#percentageChange").text(percentageChangeSev.toFixed(2) + " %+");
+        var percentageChange = $("#percentageChange").text("   " + percentageChangeSev.toFixed(2) + " %");
         $("#percentageChange").append(percentageChange);
         console.log(precentDeathSev.toFixed(2), "percent of deaths increase 7 days")
+
         
     });
 
