@@ -1,3 +1,7 @@
+body {
+    font-family: 'Commissioner', sans-serif;
+}
+
 .nav-wrapper {
     background-color: #343a40 !important;
   }
@@ -7,6 +11,9 @@
     width: 100%;
     min-width: 150px;
     border: 2px solid black;
+    overflow: hidden;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
 }
 
 .specs {
@@ -15,4 +22,16 @@
 
 .covidheader {
     text-align: center;
+}
+
+.card-panel {
+    overflow: hidden;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+}
+
+#searchBtn {
+    overflow: hidden;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
 }
