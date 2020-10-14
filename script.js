@@ -76,52 +76,20 @@ $('#searchBtn').on('click', function(event){
         // markers[0].lat = response.results[0].geometry.location.lat;
         // markers[0].lng = response.results[0].geometry.location.lng;
         
-        if (response.results[0].address_components[0].types[0] === "administrative_area_level_1") {
+
+        var addressComponents = response.results[0].address_components;
+        console.log('addressComponents:', addressComponents)
+
+        for (var i = 0; i < addressComponents.length; i++) {
+            if (addressComponents[i].types[0] === 'administrative_area_level_1') {
+                stateCode = addressComponents[i].short_name;
+                console.log('stateCode', stateCode);
+                break;
+            }
             
-            console.log("it's a state");
-
-            // Getting the short_name from the search results to provide the state code which can be used to pull NPS results
-            stateCode = response.results[0].address_components[0].short_name;
-            console.log('stateCode:', stateCode)
-
-        } else if (response.results[0].address_components[0].types[0] === "locality") {
-            
-            console.log("it's a locality");
-            stateCode = response.results[0].address_components[2].short_name;
-            console.log('stateCode:', stateCode)
-            
-        } else if (response.results[0].address_components[0].types[0] === "street_number") {
-            
-            console.log("it's a street number");
-            stateCode = response.results[0].address_components[6].short_name;
-            console.log('stateCode:', stateCode)
-
-        } else if (response.results[0].address_components[0].types[0] === "route") {
-
-            console.log("it's a route");
-            stateCode = response.results[0].address_components[4].short_name;
-            console.log('stateCode:', stateCode)
-
-        } else if (response.results[0].address_components[0].types[0] === "administrative_area_level_2") {
-
-            console.log("it's a county");
-            stateCode = response.results[0].address_components[1].short_name;
-            console.log('stateCode:', stateCode)
-
-        } else if (response.results[0].address_components[0].types[0] === "neighborhood") {
-
-            console.log("it's a neighborhood");
-            stateCode = response.results[0].address_components[4].short_name;
-            console.log('stateCode:', stateCode)
-
-        } else if (response.results[0].address_components[0].types[0 || 1 || 2] === 'establishment') {
-
-            console.log("it's an establishment");
-            stateCode = response.results[0].address_components[6].short_name;
-            console.log('stateCode:', stateCode)
-        } else {
-            console.log("we don't recognize your search");
         }
+        
+        
 
         npsURL = "https://developer.nps.gov/api/v1/parks?statecode=" + stateCode + "&api_key=" + npsAPIkey;
 
