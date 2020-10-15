@@ -46,7 +46,7 @@ function addMarkers(markers) {
 function searchedMap() {
     map = new google.maps.Map(document.getElementById('map'), {
         center: {lat: mapCenter.lat, lng: mapCenter.lng},
-        zoom: 9,
+        zoom: 7,
     });
 }
 
