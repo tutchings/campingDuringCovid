@@ -43,77 +43,15 @@
     <!-- materialize parallax embedded element -->
     <div class="parallax-container pc1">
         <div class="parallax"><img src="./GardenofGodsNPpic1.jpg"></div>
-      </div>
-
-    <!-- main conatiner for the search, results list, covid data, and dynamically generated map -->
-    <div class="container">
-        <div class="row">
-            <br />
-           
-            <!-- main search field -->
-            <div class="col s4">
-                <div class="input-field">
-                    <input placeholder="Enter Exact Address, City & State, or Zipcode" id="searchInput" type="text"
-                        class="validate">
-
-                    <a class="waves-effect waves-light btn" id="searchBtn">Search</a>
-                </div>
-
-                <!-- dynamically generated list of park results from search -->
-                <ul>
-                    <li>
-                        Great Smoky Mountains National Park
-                    </li>
-                    <br />
-                    <li>
-                        Carl Sandburg Home National Historic Site
-                    </li>
-                    <br />
-                    <li>
-                        Blue Ridge National Heritage Area
-                    </li>
-                    <br />
-                </ul>
-            </div>
-
-
-            <!-- Covid data from covidtracking api, updated daily by state -->
-            <div class="col s8 card-panel" id="card">
-                <div class="col s6">
-                    <h4 class="covidheader white-text"><b>COVID-19 Data:</b></h4>
-                </div>
-                <div class="col s6 specs">
-                    <ul>
-                        <li class="white-text">Seven day change in positive cases:<span id="percentageChange"><b></b></span></li>
-                        <li class="white-text hospitalization">Seven day change in hospitalizations:<span id="hospitalizations"><b></b></span></li>
-                        <li class="white-text">Seven day change in confirmed deaths:<span id="deaths"><b></b></span></li>
-                    </ul>
-                </div>
-            </div>
-
-
-
-
-            <!-- div for interactive map -->
-            <div class="col s8">
-                <div id="map"></div>
-            </div>
-
-        </div>
-        
     </div>
- 
-    <!-- second image for parallax effect -->
-    <div class="parallax-container oc2">
-    <div class="parallax"><img src="./GardenofGodsNPpic1.jpg"></div>
-        
 
-    <section class="container">
+    <!-- main container for page -->
+    <main class="container">
         <div class="row">
         
         <h2>About Us</h2>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda nihil id, magni explicabo, ipsa deserunt eveniet exercitationem itaque distinctio a saepe! Similique praesentium esse ullam temporibus vitae officia ipsam quaerat?</p>            
-        <h2>Contact Us</h2>
+        <h3>Contact Us</h3>
         <form action="https://formspree.io/f/xrgoponk" method="POST">
         
             <div class="form-group">
@@ -140,7 +78,16 @@
     
         </form>
         </div>
-    </section>
+    </main>
+        
+  
+ 
+    <!-- second image for parallax effect -->
+    <div class="parallax-container oc2">
+    <div class="parallax"><img src="./GardenofGodsNPpic1.jpg"></div>
+        
+
+    
 
     <!-- scripts for Jquery, moment.js, materializeCSS, followed by links to API keys and local js file -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
