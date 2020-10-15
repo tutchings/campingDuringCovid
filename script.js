@@ -1,5 +1,9 @@
 $('body').append('<script defer src="https://maps.googleapis.com/maps/api/js?key=' + key + '&callback=initializeMap"></script>');
 
+$(document).ready(function(){
+    $('.parallax').parallax();
+  });
+
 console.log(this);
 var map;
 var searchInput;
