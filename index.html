@@ -1,93 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <title>Exploring Parking During Covid: Live Search</title>
+    <!-- MaterializeCSS CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-      <!-- link to JQuery CDN -->
-      <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-      <!-- Materialize CDN JavaScript -->
-       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-       <script src="http://www.bing.com/widget/bootstrap.answer.js" async=""></script>
-       <!-- link to local Javacript file -->
-       <script src="./script.js" defer></script>
-    <title>Exploring National Parks During COVID-19</title>
+    <!-- Google Fonts CDN -->
+    <link href="https://fonts.googleapis.com/css2?family=Commissioner&display=swap" rel="stylesheet">
+    <!-- Fontawesome 4.7.0 CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- local stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- shortcut icon -->
     <link rel="shortcut icon" href="https://img.icons8.com/plasticine/50/000000/earth-element.png">
 </head>
+
 <body>
-    <nav>
-        <div class="nav-wrapper">
-          <a href="#!" class="brand-logo center">Exploring Parks During Covid</a>
-          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-          <ul class="left hide-on-med-and-down">
-            <li><a href="#">Headlines</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-            <!--lines 33 and 26-->
-          </ul>
-        </div>
-      </nav>
-      <ul class="sidenav" id="mobile-demo">
-        <li><a href="#">Headlines</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
-            <!--lines 33 and 26-->
-      </ul>
-      <br />
-   
-    <div class="row">
-      <div class="col s4 input-field">
-          <input placeholder="Enter Exact Address, City & State, or Zipcode" id="searchInput" type="text" class="validate">
-          <label class="active" for="location search">Search Location of our Desired National Park</label>
-          <a class="waves-effect waves-light btn" id="searchBtn">Search</a>
-      <br />
-        <ul>
-          <li>
-            Great Smoky Mountains National Park
-          </li>
-          <br />
-          <li>
-            Carl Sandburg Home National Historic Site
-          </li>
-          <br />
-          <li>
-            Blue Ridge National Heritage Area
-          </li>
-          <br />
-        </ul>
-    </div> 
 
-    <div class="col s8">
-    <div id="content">
-        <div id="text">
-
-        </div>
-        <div class="col s8 card-panel green">
-            <div class="col s5">
-              <h3 class="white-text">COVID-19 Data:</h3>
-              <p class="white-text">percentage change over past 7 days:</p>
+    <!-- navbar that collaspes to a pull out menu on small viewports -->
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo center hide-on-med-and-down">Exploring Parks During Covid</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul class="left hide-on-med-and-down">
+                    <li><a href="./headlines.html">Headlines</a></li>
+                    <li><a href="./about.html">About Us</a></li>
+                    <a href="#" class="fa fa-github"></a>
+                </ul>
             </div>
-            <div class="col s3">
-              <ul> 
-                <li class="white-text">Hospitalization 2%</li>
-                <li class="white-text">Deaths 1%</li>
-                <li class="white-text">Positive cases 3%</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class= "col s8">
-            <iframe width="500" height="400" frameborder="0"
-        src="#" scrolling="no"></iframe>
-
-            </iframe>
-
-            </div>
-        </div>
+        </nav>
     </div>
-  </div>
-</div>
+
+    <ul class="sidenav" id="mobile-demo">
+        <a href="#" class="fa fa-github"></a>
+        <li><a href="./headlines.html">Headlines</a></li>
+        <li><a href="./about.html">About Us</a></li>
+    </ul>
+
+    <!-- materialize parallax embedded element -->
+    <div class="parallax-container pc1">
+        <div class="parallax"><img id="parallaxImg" src="./GardenofGodsNPpic1.jpg"></div>
+      </div>
+
+    <!-- main conatiner for the search, results list, covid data, and dynamically generated map -->
+    <div class="container">
+        <div class="row">
+            <br />
+           
+            <!-- main search field -->
+            <div class="col s4">
+                <div class="input-field">
+                    <input placeholder="Enter Exact Address, City & State, or Zipcode" id="searchInput" type="text"
+                        class="validate">
+
+                    <a class="waves-effect waves-light btn" id="searchBtn">Search</a>
+                </div>
+
+                <!-- dynamically generated list of park results from search -->
+                <ul>
+                    <li>
+                        Great Smoky Mountains National Park
+                    </li>
+                    <br />
+                    <li>
+                        Carl Sandburg Home National Historic Site
+                    </li>
+                    <br />
+                    <li>
+                        Blue Ridge National Heritage Area
+                    </li>
+                    <br />
+                </ul>
+            </div>
 
 
+            <!-- Covid data from covidtracking api, updated daily by state -->
+            <div class="col s8 card-panel" id="card">
+                <div class="col s6">
+                    <h4 class="covidheader white-text"><b>COVID-19 Data:</b></h4>
+                </div>
+                <div class="col s6 specs">
+                    <ul>
+                        <li class="white-text">Seven day change in positive cases:<span id="percentageChange"><b></b></span></li>
+                        <li class="white-text hospitalization">Seven day change in hospitalizations:<span id="hospitalizations"><b></b></span></li>
+                        <li class="white-text">Seven day change in confirmed deaths:<span id="deaths"><b></b></span></li>
+                    </ul>
+                </div>
+            </div>
+
+
+
+
+            <!-- div for interactive map -->
+            <div class="col s8">
+                <div id="map"></div>
+            </div>
+
+        </div>
+        
+    </div>
+ 
+    <!-- second image for parallax effect -->
+    <div class="parallax-container pc2">
+    <div class="parallax"><img id="parallaxImg" src="./GardenofGodsNPpic1.jpg"></div>      
+
+    <!-- scripts for Jquery, moment.js, materializeCSS, followed by links to API keys and local js file -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="key.js"></script>
+    <script src="covid.js"></script>
+    <script src="script.js"></script>
+    <script src="nps.js"></script>
 </body>
+
 </html>
