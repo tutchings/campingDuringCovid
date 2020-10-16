@@ -41,7 +41,7 @@ function npsResults(queryURL) {
 
         .then(function run(results) {
             // console.log("URL", queryURL);
-            console.log("Dropdown selection results", results);
+            console.log("NPS Search Results", results);
 
             for (var i = 0; i < results.data.length; i++){
                 
@@ -70,6 +70,7 @@ function npsResults(queryURL) {
             }
 
             searchResults = searchResults.sort(sort);
+            console.log('searchResults:', searchResults)
 
             for (let i = 0; i < searchResults.length; i++) {
                 var newMarkerObject = {};
@@ -79,6 +80,13 @@ function npsResults(queryURL) {
                 if (searchResults[i].lng !== ''){
                     newMarkerObject.lng = searchResults[i].lng;
                 }
+
+                newMarkerObject.park = searchResults[i].name;
+                newMarkerObject.distance = searchResults[i].distance + ' Miles Away';
+                newMarkerObject.infoHTML = '<div id="content">' + '<div id="siteNotice">' + '</div>' + '<h4>' + newMarkerObject.park + '</h4>' + '<p>' + newMarkerObject.distance + '</p>';
+                newMarkerObject.createInfoWindow = new google.maps.InfoWindow( {
+                    content: newMarkerObject.infoHTML
+                });
                     
                 markers.push(newMarkerObject); 
 
@@ -87,7 +95,7 @@ function npsResults(queryURL) {
             console.log('markers', markers);
             addMarkers(markers);
 
-            console.log('sorted searchResults:', searchResults);
+            console.log('Sorted NPS Search Results:', searchResults);
 
 
             

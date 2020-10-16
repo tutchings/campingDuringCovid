@@ -1,7 +1,7 @@
 function runCovid (shortName) {
     var state = shortName
     var stateLc = state.toLowerCase();
-     console.log(state, "testing if it is still saved for COVID search");
+    //  console.log(state, "testing if it is still saved for COVID search");
  
      var queryURL = "https://api.covidtracking.com/v1/states/" + stateLc + "/daily.json";
      $.ajax({
@@ -10,7 +10,7 @@ function runCovid (shortName) {
        })
        .then(function(response) {
      
-         console.log(response, "Covid data for " + stateLc);
+        //  console.log(response, "Covid data for " + stateLc);
          var deathSevenDay = 0
          var positiveSevenDay = 0
          for (var i = 0; i < 7; i++) {
@@ -20,7 +20,7 @@ function runCovid (shortName) {
  
              
          }
-         console.log("death's over seven days", deathSevenDay, "positive cases over seven days", positiveSevenDay)
+        //  console.log("death's over seven days", deathSevenDay, "positive cases over seven days", positiveSevenDay)
          var totalDeaths = response[6].death
          var precentDeathSev = (deathSevenDay / totalDeaths) * 100;
          var deaths = $("#deaths").text("   " + precentDeathSev.toFixed(2) + " %");
