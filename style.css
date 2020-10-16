@@ -46,3 +46,12 @@ body {
  .pc2 {
     height: 600px;
  }
+
+ .parkImg {
+     height: 250px;
+     width: 250px;
+ }
+
+ #markerContent {
+     text-align: center;
+ }

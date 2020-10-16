@@ -98,7 +98,7 @@ $('#searchBtn').on('click', function(event){
         markerObject.lng = response.results[0].geometry.location.lng;
         markerObject.park = 'Your Location';
         markerObject.distance = '0 Miles Away';
-        markerObject.infoHTML = '<div id="content">' + '<div id="siteNotice">' + '</div>' + '<h4>' + markerObject.park + '</h4>' + '<p>' + markerObject.distance + '</p>';
+        markerObject.infoHTML = '<div id="markerContent">'  + '<h4>' + markerObject.park + '</h4>' + '<p>' + markerObject.distance + '</p>' + '</div>';
         markerObject.createInfoWindow = new google.maps.InfoWindow( {
             content: markerObject.infoHTML
         });

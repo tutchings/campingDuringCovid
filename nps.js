@@ -42,6 +42,7 @@ function npsResults(queryURL) {
         .then(function run(results) {
             // console.log("URL", queryURL);
             console.log("NPS Search Results", results);
+            
 
             for (var i = 0; i < results.data.length; i++){
                 
@@ -58,7 +59,8 @@ function npsResults(queryURL) {
                         latLng: results.data[i].latLong,
                         lat: parseFloat(results.data[i].latitude),
                         lng: parseFloat(results.data[i].longitude),
-                        distance: distance
+                        distance: distance,
+                        image: results.data[i].images[0].url
                     }//end searchResults[i]
 
             }//end for
@@ -83,7 +85,8 @@ function npsResults(queryURL) {
 
                 newMarkerObject.park = searchResults[i].name;
                 newMarkerObject.distance = searchResults[i].distance + ' Miles Away';
-                newMarkerObject.infoHTML = '<div id="content">' + '<div id="siteNotice">' + '</div>' + '<h4>' + newMarkerObject.park + '</h4>' + '<p>' + newMarkerObject.distance + '</p>';
+                newMarkerObject.image = searchResults[i].image;
+                newMarkerObject.infoHTML = '<div id="markerContent">' + '<h4>' + newMarkerObject.park + '</h4>' + '<p>' + newMarkerObject.distance + '</p>' + '<img src="' + newMarkerObject.image + '" alt="Park Image" class="parkImg">' + '</div>';
                 newMarkerObject.createInfoWindow = new google.maps.InfoWindow( {
                     content: newMarkerObject.infoHTML
                 });
