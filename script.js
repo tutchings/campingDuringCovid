@@ -11,6 +11,8 @@ var url;
 var stateCode;
 var npsURL;
 var youAreHere = 'youAreHere.png'
+var mqCityState;
+
 
 //lat and lng info
 //positve lat = North
@@ -25,7 +27,33 @@ var mapCenter = {
 
 var markers = [];
 
+function currentLocation(position) {
+    var mqLat = position.coords.latitude;
+    var mqLng = position.coords.longitude;
+    var mqCoords = mqLat + ',' + mqLng;
+    console.log('mqCoords:', mqCoords);
 
+    var mqURL = 'http://www.mapquestapi.com/geocoding/v1/reverse?key=' + mqKey + '&location=' + mqCoords;
+
+    $.ajax({
+        url: mqURL,
+        method: "GET"
+    }).then(function(response){
+        console.log('mqresponse', response);
+
+        var mqState = response.results[0].locations[0].adminArea3;
+        var mqCity = response.results[0].locations[0].adminArea5;
+        mqCityState = mqCity + ' ' + mqState;
+        mqCityState = mqCityState.replace(' ', '+');
+        console.log('mqCityState:', mqCityState)
+       
+
+        runApplication();
+    })
+
+
+
+}
 
 function initializeMap() {
     map = new google.maps.Map(document.getElementById('map'), {
@@ -61,11 +89,6 @@ function addMarkers(markers) {
     }
 }
 
-
-function addMarkerLabels(markers) {
-
-}
-
 function searchedMap() {
     map = new google.maps.Map(document.getElementById('map'), {
         center: {lat: mapCenter.lat, lng: mapCenter.lng},
@@ -73,14 +96,18 @@ function searchedMap() {
     });
 }
 
-$('#searchBtn').on('click', function(event){
-    event.preventDefault();
+function runApplication() {
+    
+    if ($('#searchInput').val()){
+        searchInput = $('#searchInput').val().trim();
+        searchInput = searchInput.replace(' ', '+');
+        console.log('searchInput:', searchInput)
+        $('#searchInput').val('');
+        url = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + searchInput + '&key=' + key;
+    } else {
+        url = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + mqCityState + '&key=' + key;
+    }
 
-    searchInput = $('#searchInput').val().trim();
-    searchInput = searchInput.replace(' ', '+');
-    url = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + searchInput + '&key=' + key;
-    
-    
     markers = [];
 
     $.ajax({
@@ -96,7 +123,7 @@ $('#searchBtn').on('click', function(event){
         var markerObject = {};
         markerObject.lat = response.results[0].geometry.location.lat;
         markerObject.lng = response.results[0].geometry.location.lng;
-        markerObject.park = 'Your Location';
+        markerObject.park = 'Searched Location';
         markerObject.distance = '0 Miles Away';
         markerObject.infoHTML = '<div id="markerContent">'  + '<h4>' + markerObject.park + '</h4>' + '<p>' + markerObject.distance + '</p>' + '</div>';
         markerObject.createInfoWindow = new google.maps.InfoWindow( {
@@ -130,8 +157,21 @@ $('#searchBtn').on('click', function(event){
         searchedMap();
         // addMarkers();
     })
+}
 
 
+$('#searchBtn').on('click', runApplication);
+
+
+$('#currentLocationBtn').on('click', function(event) {
+    event.preventDefault();
+
+    markers = [];
+
+    if(navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(currentLocation);
+    }
+    
 });
 
 

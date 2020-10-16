@@ -42,7 +42,7 @@ function npsResults(queryURL) {
         .then(function run(results) {
             // console.log("URL", queryURL);
             console.log("NPS Search Results", results);
-            
+            searchResults = [];
 
             for (var i = 0; i < results.data.length; i++){
                 
@@ -60,8 +60,13 @@ function npsResults(queryURL) {
                         lat: parseFloat(results.data[i].latitude),
                         lng: parseFloat(results.data[i].longitude),
                         distance: distance,
-                        image: results.data[i].images[0].url
                     }//end searchResults[i]
+
+                    if (results.data[i].images.length !== 0){
+                        searchResults[i].image = results.data[i].images[0].url
+                    } else {
+                        searchResults[i].image = 'npsLogo.jpg';
+                    }
 
             }//end for
 
