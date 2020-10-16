@@ -56,6 +56,9 @@ function addList() {
         pkBtn.attr({ "href": "#modal1", "data-index": i });
         pkBtn.text(parkName);
         $(".park-list").append(pkBtn);
+        pkBtn.click(function () {
+            $(".park-name").append(searchResults[i].name)
+        });
     }
     //Use an on-click to generate content
 }
