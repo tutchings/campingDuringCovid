@@ -28,7 +28,7 @@ $.ajax(bingNewsResults).done(function (response) {
     for (var i = 0; i < response.value.length; i++) {
         var mynewDiv = $("newDiv") ;
 
-        let newDiv = `<div class=card><span class=card-title><p>${response.value[i].name}</p></span><div class=card-content><br /><p> ${response.value[i].description} </p><a href="${response.value[i].url}">${response.value[i].url}</a></div></div><br /><br />`;
+        let newDiv = `<div class=card><span class="card-title"><b>${response.value[i].name}</b></span><br><img src="${response.value[i].image.thumbnail.contentUrl}"alt"${response.value[i].image.name}><div class=card-content><p><b>${response.value[i].provider[0].name}</b></p><p>${response.value[i].description}</p><a href="${response.value[i].url}">Click here to read the full article</a></div></div>`;
 
         $("section").append(newDiv);
 
