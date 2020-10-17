@@ -44,6 +44,12 @@ function npsResults(queryURL) {
             console.log("NPS Search Results", results);
             searchResults = [];
 
+            // repopulate parallax images based on search second record and second avalaible photo
+            var parallaxReplaceImg = $("#parallaxImg").attr({"src": results.data[1].images[0].url})
+            $("parallaxImag").append(parallaxReplaceImg);
+            var parallaxReplaceImg = $("#parallaxImg2").attr({"src": results.data[1].images[0].url})
+            $("parallaxImag2").append(parallaxReplaceImg);
+
             for (var i = 0; i < results.data.length; i++){
                 
                     var lat1 = parseFloat(results.data[i].latitude);
