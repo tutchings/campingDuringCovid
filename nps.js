@@ -59,7 +59,10 @@ function npsResults(queryURL) {
                     lat: parseFloat(results.data[i].latitude),
                     lng: parseFloat(results.data[i].longitude),
 
-                    distance: distance
+                    distance: distance,
+                    description1: results.data[i].description,
+                    images: results.data[i].images[0].url,
+                    url: results.data[i].url,
                 }//end searchResults[i]
 
             }//end for

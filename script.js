@@ -59,7 +59,18 @@ function addList() {
 
 
         pkBtn.click(function () {
-            $(".park-name").append(searchResults[i].name)
+            $(".park-name").empty();
+            $(".distance").empty();
+            $(".images").empty();
+            $(".description").empty();
+            $(".NPSurl").empty();
+
+            $(".park-name").append(searchResults[i].name);
+            $(".distance").append(Math.round(searchResults[i].distance) + ' Miles Away');
+            $(".images").attr('src', searchResults[i].images);
+            $(".description").append(searchResults[i].description1);
+            $(".NPSurl").append(searchResults[i].name + ' Online');
+            $(".NPSurl").attr('href', searchResults[i].url);
         });
 
 
