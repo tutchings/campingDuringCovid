@@ -95,6 +95,8 @@ function addMarkers(markers) {
 }
 
 function addList() {
+    $('.park-list').empty();
+    
     for (let i = 0; i < searchResults.length; i++) {
         parkName = searchResults[i].name;
         var pkBtn = $("<button>");

@@ -75,7 +75,7 @@ function npsResults(queryURL) {
                 if (results.data[i].images.length !== 0) {
                     searchResults[i].image = results.data[i].images[0].url
                 } else {
-                    searchResults[i].image = 'npsLogo.jpg';
+                    searchResults[i].image = '../imgs/npsLogo.jpg';
                 }
 
             }//end for
