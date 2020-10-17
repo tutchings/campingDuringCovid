@@ -56,9 +56,26 @@ function addList() {
         pkBtn.attr({ "href": "#modal1", "data-index": i });
         pkBtn.text(parkName);
         $(".park-list").append(pkBtn);
+
+
         pkBtn.click(function () {
             $(".park-name").append(searchResults[i].name)
         });
+
+
+        // pkBtn[0].addListener('click', function (event) {
+        //     // event.preventDefault();
+        //     searchResults[0].createInfoWindow.open(parkName[0]);
+        // });
+
+        // for (let i = 1; i < searchResults.length; i++) {
+
+        //     pkBtn[i].addListener('click', function (event) {
+        //         // event.preventDefault();
+        //         searchResults[i].createInfoWindow.open(parkName[i]);
+        //     });
+        // }
+
     }
     //Use an on-click to generate content
 }

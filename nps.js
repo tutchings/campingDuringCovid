@@ -58,6 +58,7 @@ function npsResults(queryURL) {
                     latLng: results.data[i].latLong,
                     lat: parseFloat(results.data[i].latitude),
                     lng: parseFloat(results.data[i].longitude),
+
                     distance: distance
                 }//end searchResults[i]
 
