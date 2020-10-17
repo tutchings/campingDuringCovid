@@ -20,14 +20,19 @@ Project is created with:
 
 ## Sources
 The following APIs are being used in this application. 
+
 ### APIs
-Google Cloud Platform: Google Maps API & Geocoding API (https://developers.google.com/maps/documentation)
-The Covid Tracking Project API (https://covidtracking.com/about)
-The National Park Service API (https://www.nps.gov/subjects/developer/index.htm)
-Bing News Search API (https://rapidapi.com/microsoft-azure-org-microsoft-cognitive-services/api/bing-news-search1/details)
-MapQuest API (http://www.mapquestapi.com/)
+* Google Cloud Platform: Google Maps API & Geocoding API (https://developers.google.com/maps/documentation)
+* The Covid Tracking Project API (https://covidtracking.com/about)
+* The National Park Service API (https://www.nps.gov/subjects/developer/index.htm)
+* Bing News Search API (https://rapidapi.com/microsoft-azure-org-microsoft-cognitive-services/api/bing-news-search1/details)
+* MapQuest API (http://www.mapquestapi.com/)
 
 
 ![Image of the website](https://tutchings.github.io/exploringParksDuringCovidLiveSearch/screenshotImg1.png)
+
+
 ![Image of the website](https://tutchings.github.io/exploringParksDuringCovidLiveSearch/screenshotImg2.png)
-![Image of the website](https://tutchings.github.io/exploringParksDuringCovidLiveSearch/screenshotImg3.png)
+
+
+![Image of the website](https://tutchings.github.io/exploringParksDuringCovidLiveSearch/screenshotImg3.PNG)
