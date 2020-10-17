@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exploring Parks During Covid: Live Search</title>
+    <!-- MaterializeCSS CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Google Fonts CDN -->
+    <link href="https://fonts.googleapis.com/css2?family=Commissioner&display=swap" rel="stylesheet">
+    <!-- Fontawesome 4.7.0 CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- local stylesheet -->
+    <link rel="stylesheet" href="../style.css">
+    <!-- shortcut icon -->
+    <link rel="shortcut icon" href="https://img.icons8.com/plasticine/50/000000/earth-element.png">
+</head>
+
+<body>
+
+    <!-- navbar that collaspes to a pull out menu on small viewports -->
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper">
+                <a href="../index.html" class="brand-logo center hide-on-med-and-down">Exploring Parks During Covid</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul class="left hide-on-med-and-down">
+                    <li><a href="./headlines.html">Headlines</a></li>
+                    <li><a href="./about.html">About Us</a></li>
+                    <a href="https://github.com/tutchings/exploringParksDuringCovidLiveSearch" class="fa fa-github"></a>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <ul class="sidenav" id="mobile-demo">
+        <a href="https://github.com/tutchings/exploringParksDuringCovidLiveSearch" class="fa fa-github"></a>
+        <li><a href="./headlines.html">Headlines</a></li>
+        <li><a href="./about.html">About Us</a></li>
+    </ul>
+
+    <!-- materialize parallax embedded element -->
+    <div class="parallax-container pc1">
+        <div class="parallax"><img src="../GardenofGodsNPpic1.jpg"></div>
+    </div>
+
+    <!-- main container for page -->
+    <main class="container">
+        <div class="row">
+
+            <h2>About Us</h2>
+            <p>This application provides a search for National Parks based on proximity to a city, state, zip code, or
+                address. A map is rendered that provides markers for each park. Data is provided above the map in bright
+                colors warning users of the current trend in Covid-19 transmission based on the percentage increase over
+                the past 7 days in positive cases, hospitalizations, and deaths. This information is provided by the <a
+                    href="https://covidtracking.com/about">Covid Tracking Project</a>. This
+                application is for
+                information purposes only.
+            </p>
+            <p>It was developed by Alex Nordin, Benjamin Smith, Reed Taylor, and Thomas Tutchings. The purpose of this
+                website is for educational purposes only. We are in no way affiliated with the U.S. National Parks
+                Service. Please feel free to contact us!
+            </p>
+            <h3>Contact Us</h3>
+            <form action="https://formspree.io/f/mgepabqq" method="POST">
+
+                <div class="form-group">
+                    <!-- <label for="exampleInputEmail1">First Name</label> -->
+                    <input type="text" name="First Name" class="form-control" id="exampleInput1"
+                        placeholder="First Name">
+                </div>
+
+                <div class="form-group">
+                    <!-- <label for="exampleInputEmail1">Last Name</label> -->
+                    <input type="text" name="Last Name" class="form-control" id="exampleInput2" placeholder="Last Name">
+                </div>
+
+                <div class="form-group">
+                    <!-- <label for="exampleInputEmail1">Email address</label> -->
+                    <input type="email" name="_replyto" class="form-control" id="exampleInput3"
+                        placeholder="email address">
+                </div>
+
+                <div class="form-group">
+                    <!-- <label for="formGroupExampleInput">Message</label> -->
+                    <input type="text" name="message" class="form-control" id="formGroupExampleInput4"
+                        placeholder="Type your message here.">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Send</button>
+
+            </form>
+        </div>
+    </main>
+
+
+
+    <!-- second image for parallax effect -->
+    <div class="parallax-container oc2">
+        <div class="parallax"><img src="../GardenofGodsNPpic1.jpg"></div>
+
+
+
+
+        <!-- scripts for Jquery, moment.js, materializeCSS, followed by links to API keys and local js file -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="../js/key.js"></script>
+        <script src="../js/covid.js"></script>
+        <script src="../js/script.js"></script>
+        <script src="../js/nps.js"></script>
+</body>
+
+</html>
