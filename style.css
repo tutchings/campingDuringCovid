@@ -2,6 +2,16 @@ body {
     font-family: 'Commissioner', sans-serif;
 }
 
+.card-title li {
+    color: #000000;
+
+}
+
+p li {
+    font-family: 'Commissioner', sans-serif;
+    font-size: 11;
+
+}
 .nav-wrapper {
     background-color: #343a40 !important;
   }
@@ -46,3 +56,15 @@ body {
  .pc2 {
     height: 600px;
  }
+
+ .headlines .card {
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    padding: 1rem;
+    color: black;
+}
+
+#headlines {
+    background-color: #343a40;
+    color: white;
+}
