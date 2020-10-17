@@ -28,14 +28,14 @@
                 <ul class="left hide-on-med-and-down">
                     <li><a href="./headlines.html">Headlines</a></li>
                     <li><a href="./about.html">About Us</a></li>
-                    <a href="#" class="fa fa-github"></a>
+                    <a href="https://github.com/tutchings/exploringParksDuringCovidLiveSearch" class="fa fa-github"></a>
                 </ul>
             </div>
         </nav>
     </div>
 
     <ul class="sidenav" id="mobile-demo">
-        <a href="#" class="fa fa-github"></a>
+        <a href="https://github.com/tutchings/exploringParksDuringCovidLiveSearch" class="fa fa-github"></a>
         <li><a href="./headlines.html">Headlines</a></li>
         <li><a href="./about.html">About Us</a></li>
     </ul>
@@ -43,13 +43,13 @@
     <!-- materialize parallax embedded element -->
     <div class="parallax-container pc1">
         <div class="parallax"><img id="parallaxImg" src="./GardenofGodsNPpic1.jpg"></div>
-      </div>
+    </div>
 
     <!-- main conatiner for the search, results list, covid data, and dynamically generated map -->
     <div class="container">
         <div class="row">
             <br />
-           
+
             <!-- main search field -->
             <div class="col s4">
                 <div class="input-field">
@@ -57,24 +57,24 @@
                         class="validate">
 
                     <a class="waves-effect waves-light btn" id="searchBtn">Search</a>
-                    <a class="waves-effect waves-light btn" id="currentLocationBtn"><img src="currentLocation.png" alt="Use Current Location" id="currentLocation"></a>
+                    <a class="waves-effect waves-light btn" id="currentLocationBtn"><img src="currentLocation.png"
+                            alt="Use Current Location" id="currentLocation"></a>
                 </div>
 
-                <!-- dynamically generated list of park results from search -->
-                <ul>
-                    <li>
-                        Great Smoky Mountains National Park
-                    </li>
-                    <br />
-                    <li>
-                        Carl Sandburg Home National Historic Site
-                    </li>
-                    <br />
-                    <li>
-                        Blue Ridge National Heritage Area
-                    </li>
+                <ul class="park-list">
                     <br />
                 </ul>
+            </div>
+
+            <!-- Modal content -->
+            <div id="modal1" class="modal modal-fixed-footer">
+                <div class="modal-content">
+                    <h4 class="park-name"></h4>
+                    <p class="distance"></p>
+                    <img class="images" height="300" src="">
+                    <p class="description"></p>
+                    <a class="NPSurl" href=""></a>
+                </div>
             </div>
 
 
@@ -85,9 +85,12 @@
                 </div>
                 <div class="col s6 specs">
                     <ul>
-                        <li class="white-text">Seven day change in positive cases:<span id="percentageChange"><b></b></span></li>
-                        <li class="white-text hospitalization">Seven day change in hospitalizations:<span id="hospitalizations"><b></b></span></li>
-                        <li class="white-text">Seven day change in confirmed deaths:<span id="deaths"><b></b></span></li>
+                        <li class="white-text">Seven day change in positive cases:<span
+                                id="percentageChange"><b></b></span></li>
+                        <li class="white-text hospitalization">Seven day change in hospitalizations:<span
+                                id="hospitalizations"><b></b></span></li>
+                        <li class="white-text">Seven day change in confirmed deaths:<span id="deaths"><b></b></span>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -101,21 +104,21 @@
             </div>
 
         </div>
-        
+
     </div>
- 
+
     <!-- second image for parallax effect -->
     <div class="parallax-container pc2">
-    <div class="parallax"><img id="parallaxImg2" src="./GardenofGodsNPpic1.jpg"></div>      
+        <div class="parallax"><img id="parallaxImg2" src="./GardenofGodsNPpic1.jpg"></div>
 
-    <!-- scripts for Jquery, moment.js, materializeCSS, followed by links to API keys and local js file -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="key.js"></script>
-    <script src="covid.js"></script>
-    <script src="script.js"></script>
-    <script src="nps.js"></script>
+        <!-- scripts for Jquery, moment.js, materializeCSS, followed by links to API keys and local js file -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="key.js"></script>
+        <script src="covid.js"></script>
+        <script src="script.js"></script>
+        <script src="nps.js"></script>
 </body>
 
 </html>

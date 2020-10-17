@@ -8,7 +8,12 @@ an application for locating National Parks and current statistics on the coronav
 * [Sources](#sources)
 
 ## General info
-This application provides a search for National Parks based on proxcimity to a city, state, zip code, or address. A map is rendered that provides markers for each park. Data is provided above the map is bright colors warning users of the current trend in Covid-19 transmission based on the precertage increase over the past 7 days in positive cases, hospitalizations, and deaths. This information is provided by the Covid Tracking Project that is a volunteer organization created by The Atlantic (https://www.theatlantic.com/). This application is for informaiton purposes only. 
+This application provides a search for National Parks based on proximity to a city, state, zip code, or
+                address. A map is rendered that provides markers for each park. Data is provided above the map in bright
+                colors warning users of the current trend in Covid-19 transmission based on the percentage increase over
+                the past 7 days in positive cases, hospitalizations, and deaths. This information is provided by the COVID Tracking Project (https://covidtracking.com/about). This
+                application is for information purposes only.
+            
 	
 ## Technologies
 Project is created with:
@@ -22,6 +27,7 @@ Google Cloud Platform: Google Maps API & Geocoding API (https://developers.googl
 The Covid Tracking Project API (https://covidtracking.com/about)
 The National Park Service API (https://www.nps.gov/subjects/developer/index.htm)
 Bing News Search API (https://rapidapi.com/microsoft-azure-org-microsoft-cognitive-services/api/bing-news-search1/details)
+MapQuest API (http://www.mapquestapi.com/)
 
 
 ![Image of the website](add URL for screenshot image(s) that will be stored on github)
