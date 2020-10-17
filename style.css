@@ -46,3 +46,36 @@ body {
  .pc2 {
     height: 600px;
  }
+
+ .parkImg {
+     height: 250px;
+     width: 250px;
+ }
+
+ #markerContent {
+     text-align: center;
+ }
+
+ #currentLocationBtn {
+    overflow: hidden;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+ }
+
+ #currentLocation {
+     width: 25px;
+     height: 25px;
+     margin-top: 5px;
+ }
+ 
+ .headlines .card {
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    padding: 1rem;
+    color: black;
+}
+
+#headlines {
+    background-color: #343a40;
+    color: white;
+}
