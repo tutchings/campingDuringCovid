@@ -38,7 +38,7 @@ function currentLocation(position) {
     var mqCoords = mqLat + ',' + mqLng;
     console.log('mqCoords:', mqCoords);
 
-    var mqURL = 'https://www.mapquestapi.com/geocoding/v1/reverse?key=' + mqKey + '&location=' + mqCoords;
+    var mqURL = 'http://www.mapquestapi.com/geocoding/v1/reverse?key=' + mqKey + '&location=' + mqCoords;
 
     $.ajax({
         url: mqURL,
