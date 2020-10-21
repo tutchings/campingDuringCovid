@@ -68,14 +68,13 @@ function npsResults(queryURL) {
                     distance: distance,
 
                     description1: results.data[i].description,
-                    images: results.data[i].images[0].url,
                     url: results.data[i].url,
                 }//end searchResults[i]
 
                 if (results.data[i].images.length !== 0) {
                     searchResults[i].image = results.data[i].images[0].url
                 } else {
-                    searchResults[i].image = '../imgs/npsLogo.jpg';
+                    searchResults[i].image = 'npsLogo.jpg';
                 }
 
             }//end for

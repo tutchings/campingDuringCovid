@@ -115,7 +115,7 @@ function addList() {
 
             $(".park-name").append(searchResults[i].name);
             $(".distance").append(Math.round(searchResults[i].distance) + ' Miles Away');
-            $(".images").attr('src', searchResults[i].images);
+            $(".images").attr('src', searchResults[i].image);
             $(".description").append(searchResults[i].description1);
             $(".NPSurl").append(searchResults[i].name + ' Online');
             $(".NPSurl").attr('href', searchResults[i].url);
