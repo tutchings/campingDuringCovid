@@ -96,6 +96,8 @@ function addMarkers(markers) {
 
 function addList() {
     $('.park-list').empty();
+    $('.park-list').css('overflow', 'scroll');
+    $('.park-list').css('height', '500px');
     
     for (let i = 0; i < searchResults.length; i++) {
         parkName = searchResults[i].name;
