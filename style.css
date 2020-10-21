@@ -79,3 +79,8 @@ body {
     background-color: #343a40;
     color: white;
 }
+
+.park-list {
+    height: 500px;
+    overflow: scroll;
+}
