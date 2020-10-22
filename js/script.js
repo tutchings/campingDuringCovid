@@ -38,7 +38,7 @@ function currentLocation(position) {
     var mqCoords = mqLat + ',' + mqLng;
     console.log('mqCoords:', mqCoords);
 
-    var mqURL = 'http://www.mapquestapi.com/geocoding/v1/reverse?key=' + mqKey + '&location=' + mqCoords;
+    var mqURL = 'https://www.mapquestapi.com/geocoding/v1/reverse?key=' + mqKey + '&location=' + mqCoords;
 
     $.ajax({
         url: mqURL,
@@ -95,6 +95,10 @@ function addMarkers(markers) {
 }
 
 function addList() {
+    $('.park-list').empty();
+    $('.park-list').css('overflow', 'scroll');
+    $('.park-list').css('height', '500px');
+    
     for (let i = 0; i < searchResults.length; i++) {
         parkName = searchResults[i].name;
         var pkBtn = $("<button>");
@@ -113,7 +117,7 @@ function addList() {
 
             $(".park-name").append(searchResults[i].name);
             $(".distance").append(Math.round(searchResults[i].distance) + ' Miles Away');
-            $(".images").attr('src', searchResults[i].images);
+            $(".images").attr('src', searchResults[i].image);
             $(".description").append(searchResults[i].description1);
             $(".NPSurl").append(searchResults[i].name + ' Online');
             $(".NPSurl").attr('href', searchResults[i].url);

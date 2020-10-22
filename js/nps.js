@@ -68,7 +68,6 @@ function npsResults(queryURL) {
                     distance: distance,
 
                     description1: results.data[i].description,
-                    images: results.data[i].images[0].url,
                     url: results.data[i].url,
                 }//end searchResults[i]
 
