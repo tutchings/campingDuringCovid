@@ -6,6 +6,7 @@ an application for locating National Parks and current statistics on the coronav
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Sources](#sources)
+* [Contributors](#contributors)
 
 ## General info
 This application provides a search for National Parks based on proximity to a city, state, zip code, or
@@ -27,6 +28,11 @@ The following APIs are being used in this application.
 * Bing News Search API (https://rapidapi.com/microsoft-azure-org-microsoft-cognitive-services/api/bing-news-search1/details)
 * MapQuest API (http://www.mapquestapi.com/)
 
+## Contributors
+* Alex Nordin (https://github.com/apnordin)
+* Benjamin Smith (https://github.com/Bsmi3275)
+* Thomas Tutchings (https://github.com/tutchings)
+* Reed Taylor (https://github.com/reedtlr)
 
 ![Image of the website](https://tutchings.github.io/exploringParksDuringCovidLiveSearch/screenshotImg1.png)
 

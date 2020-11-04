@@ -8,13 +8,13 @@
     <!-- MaterializeCSS CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!-- Google Fonts CDN -->
-    <link href="https://fonts.googleapis.com/css2?family=Commissioner&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Commissioner&display=swap" rel="stylesheet" media="none">
     <!-- Fontawesome 4.7.0 CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" media="none">
     <!-- local stylesheet -->
     <link rel="stylesheet" href="../style.css">
     <!-- shortcut icon -->
-    <link rel="shortcut icon" href="https://img.icons8.com/plasticine/50/000000/earth-element.png">
+    <link rel="shortcut icon" href="https://img.icons8.com/plasticine/50/000000/earth-element.png" media="none">
 </head>
 
 <body>
@@ -40,10 +40,10 @@
         <li><a href="./about.html">About Us</a></li>
     </ul>
 
-    <!-- materialize parallax embedded element -->
-    <div class="parallax-container pc1">
-        <div class="parallax"><img src="../GardenofGodsNPpic1.jpg"></div>
-    </div>
+  <!-- materialize parallax embedded element -->
+  <div class="parallax-container pc1">
+    <div class="parallax"><img id="parallaxImg" src="../GardenofGodsNPpic1.jpg" alt="photo of national park site in selected state"></div>
+</div>
 
     <!-- main container for page -->
     <main class="container">
@@ -68,24 +68,24 @@
                 <div class="form-group">
                     <!-- <label for="exampleInputEmail1">First Name</label> -->
                     <input type="text" name="First Name" class="form-control" id="exampleInput1"
-                        placeholder="First Name">
+                        placeholder="First Name" label="enter First Name">
                 </div>
 
                 <div class="form-group">
                     <!-- <label for="exampleInputEmail1">Last Name</label> -->
-                    <input type="text" name="Last Name" class="form-control" id="exampleInput2" placeholder="Last Name">
+                    <input type="text" name="Last Name" class="form-control" id="exampleInput2" placeholder="Last Name" label="enter Last Name">
                 </div>
 
                 <div class="form-group">
                     <!-- <label for="exampleInputEmail1">Email address</label> -->
                     <input type="email" name="_replyto" class="form-control" id="exampleInput3"
-                        placeholder="email address">
+                        placeholder="email address" label="enter your email address">
                 </div>
 
                 <div class="form-group">
                     <!-- <label for="formGroupExampleInput">Message</label> -->
                     <input type="text" name="message" class="form-control" id="formGroupExampleInput4"
-                        placeholder="Type your message here.">
+                        placeholder="Type your message here." label="type your message here">
                 </div>
 
                 <button type="submit" class="btn btn-primary">Send</button>
@@ -94,14 +94,9 @@
         </div>
     </main>
 
-
-
     <!-- second image for parallax effect -->
-    <div class="parallax-container oc2">
-        <div class="parallax"><img src="../GardenofGodsNPpic1.jpg"></div>
-
-
-
+    <div class="parallax-container pc2">
+        <div class="parallax"><img id="parallaxImg2" src="../GardenofGodsNPpic1.jpg" alt="photo of national park site in selected state"></div>
 
         <!-- scripts for Jquery, moment.js, materializeCSS, followed by links to API keys and local js file -->
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
