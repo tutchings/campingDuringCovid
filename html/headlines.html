@@ -8,15 +8,13 @@
     <!-- MaterializeCSS CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!-- Google Fonts CDN -->
-    <link href="https://fonts.googleapis.com/css2?family=Commissioner&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Commissioner&display=swap" rel="stylesheet" media="none">
     <!-- Fontawesome 4.7.0 CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" media="none">
     <!-- local stylesheet -->
     <link rel="stylesheet" href="../style.css">
     <!-- shortcut icon -->
-    <link rel="shortcut icon" href="https://img.icons8.com/plasticine/50/000000/earth-element.png">
-    <!-- lazy load CDN -->
-    <script src="../js/lazysizes.min.js" async></script>
+    <link rel="shortcut icon" href="https://img.icons8.com/plasticine/50/000000/earth-element.png" media="none">
 </head>
 
 <body id="headlines">
@@ -41,7 +39,7 @@
     </ul>
    <!-- materialize parallax embedded element -->
    <div class="parallax-container pc1">
-    <div class="parallax"><img id="parallaxImg" data-src="../GardenofGodsNPpic1.jpg" class="lazyload" alt="photo of national park site in selected state"></div>
+    <div class="parallax"><img id="parallaxImg" src="../GardenofGodsNPpic1.jpg" alt="photo of national park site in selected state"></div>
 </div>
     <!-- main container for page -->
     <main class="container">
@@ -55,12 +53,12 @@
     </main>
     <!-- second image for parallax effect -->
     <div class="parallax-container pc2">
-        <div class="parallax"><img id="parallaxImg2" data-src="../GardenofGodsNPpic1.jpg" class="lazyload" alt="photo of national park site in selected state"></div>
+        <div class="parallax"><img id="parallaxImg2" src="../GardenofGodsNPpic1.jpg" alt="photo of national park site in selected state"></div>
 
         <!-- scripts for Jquery, moment.js, materializeCSS, followed by links to API keys and local js file -->
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js" async></script>
         <script src="../js/key.js"></script>
         <script src="../js/covid.js"></script>
         <script src="../js/script.js"></script>
