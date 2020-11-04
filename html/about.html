@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="../style.css">
     <!-- shortcut icon -->
     <link rel="shortcut icon" href="https://img.icons8.com/plasticine/50/000000/earth-element.png">
+    <!-- lazy load CDN -->
+    <script src="../js/lazysizes.min.js" async></script>
 </head>
 
 <body>
@@ -40,10 +42,10 @@
         <li><a href="./about.html">About Us</a></li>
     </ul>
 
-    <!-- materialize parallax embedded element -->
-    <div class="parallax-container pc1">
-        <div class="parallax"><img src="../GardenofGodsNPpic1.jpg" alt="photo of garden of the gods in CO"></div>
-    </div>
+  <!-- materialize parallax embedded element -->
+  <div class="parallax-container pc1">
+    <div class="parallax"><img id="parallaxImg" data-src="../GardenofGodsNPpic1.jpg" class="lazyload" alt="photo of national park site in selected state"></div>
+</div>
 
     <!-- main container for page -->
     <main class="container">
@@ -94,14 +96,9 @@
         </div>
     </main>
 
-
-
     <!-- second image for parallax effect -->
-    <div class="parallax-container oc2">
-        <div class="parallax"><img src="../GardenofGodsNPpic1.jpg" alt="photo of garden of the gods in CO"></div>
-
-
-
+    <div class="parallax-container pc2">
+        <div class="parallax"><img id="parallaxImg2" data-src="../GardenofGodsNPpic1.jpg" class="lazyload" alt="photo of national park site in selected state"></div>
 
         <!-- scripts for Jquery, moment.js, materializeCSS, followed by links to API keys and local js file -->
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
